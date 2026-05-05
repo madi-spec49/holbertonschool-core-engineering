@@ -5,12 +5,11 @@ import math
 Pi_approx = round(math.pi, 2)
 
 # Initialisation du booléen de validation
+valid = False
 if Pi_approx == 3.14:
 	valid = True
-else:
-	valid = False
 
 print("Language: Python")
 print("Version: 3")
 print(f"Pi approx: {Pi_approx}")
-print("Computation valid: True")
+print(f"Computation valid: {valid}")
