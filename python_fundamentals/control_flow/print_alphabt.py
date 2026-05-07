@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+# This script prints the alphabet in lowercase, excluding 'e' and 'q'.
 alphabet = list(range(97, 123))
 alphabt = ""
 
