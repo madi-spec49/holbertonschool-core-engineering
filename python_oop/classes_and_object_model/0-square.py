@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-""" Defines a class Square. """
+"""
+Defines a class Square.
+"""
 
 class Square:
-    """ Represents a square. """
+    """
+    Represents a square.
+    """
     pass
