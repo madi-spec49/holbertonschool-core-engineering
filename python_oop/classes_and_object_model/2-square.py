@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Module that defines a Square class with validation."""
 
+
 class Square:
     """A class that defines a square with a private size attribute.
     
