@@ -10,7 +10,7 @@ class Square:
     The size attribute is private to enforce encapsulation,
     allowing the class builder to control its type and value.
     """
-    
+
     def __init__(self, size):
         """
         Initialize a new Square instance.
