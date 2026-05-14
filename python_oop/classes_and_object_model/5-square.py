@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 Module that defines a Square class with size property.
 """
@@ -15,6 +15,11 @@ class Square:
     """
 
     def __init__(self, size=0):
+        """Initialize a new Square.
+
+        Args:
+            size: The size of the square (default: 0)
+        """
         self.size = size
 
     @property
