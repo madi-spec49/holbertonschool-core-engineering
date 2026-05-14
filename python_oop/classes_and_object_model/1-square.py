@@ -17,6 +17,6 @@ class Square:
         Initialize a new Square instance.
         
         Args:
-            size: The size of the square (private instance attribute)
+        size: The size of the square (private instance attribute)
         """
         self.__size = size
