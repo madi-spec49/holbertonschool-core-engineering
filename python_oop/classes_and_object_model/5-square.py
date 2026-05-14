@@ -1,13 +1,28 @@
+#!/usr/bin/python3
+"""
+Module that defines a Square class with size property.
+"""
 class Square:
-    def __init__(self, size=0):
-        self.size = size  # Appelle le setter automatiquement !
 
-    @property           # ← Décorateur getter
+
+    """
+    A class that defines a square with a private size attribute.
+    The size attribute is private to enforce encapsulation,
+    allowing the class builder to control its type and value.
+    Validations:
+        - size must be an integer
+        - size must be >= 0
+    """
+
+    def __init__(self, size=0):
+        self.size = size
+
+    @property
     def size(self):
         """Récupère la valeur (retourne une copie, pas la référence)"""
         return self.__size
 
-    @size.setter        # ← Décorateur setter (même nom !)
+    @size.setter
     def size(self, value):
         """Valide et assigne la valeur"""
         if not isinstance(value, int):
