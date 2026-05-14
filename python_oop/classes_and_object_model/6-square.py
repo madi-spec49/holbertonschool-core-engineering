@@ -84,6 +84,10 @@ class Square:
         if self.__size == 0:
             print()
         else:
+            # Print empty lines for Y position
+            for _ in range(self.__position[1]):
+                print()
+            # Print the square with X position spacing
             for _ in range(self.__size):
                 print(" " * self.__position[0] + "#" * self.__size)
 
@@ -96,6 +100,10 @@ class Square:
         if self.__size == 0:
             return ""
         result = []
+        # Add empty lines for Y position
+        for _ in range(self.__position[1]):
+            result.append("")
+        # Add the square with X position spacing
         for _ in range(self.__size):
             result.append(" " * self.__position[0] + "#" * self.__size)
         return "\n".join(result)
