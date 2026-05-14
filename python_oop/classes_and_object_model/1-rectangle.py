@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 Module that defines a Rectangle class with width and height properties.
 """
@@ -8,65 +8,65 @@ class Rectangle:
     """
     A class that defines a rectangle with private width and height attributes.
     The attributes are private to enforce encapsulation.
-    
+
     Validations:
         - width must be an integer >= 0
         - height must be an integer >= 0
     """
-    
+
     def __init__(self, width=0, height=0):
         """
         Initialize a new Rectangle instance.
-        
+
         Args:
             width (int, optional): The width of the rectangle. Defaults to 0.
             height (int, optional): The height of the rectangle. Defaults to 0.
         """
         self.width = width
         self.height = height
-    
+
     @property
     def width(self):
         """Get the current width of the rectangle."""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """
         Set the width of the rectangle with validation.
-        
+
         Args:
             value (int): The new width value.
-            
+
         Raises:
             TypeError: If value is not an integer.
             ValueError: If value is less than 0.
         """
         if not isinstance(value, int):
-            raise TypeError("width doit être un entier")
+            raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("width doit être >= 0")
+            raise ValueError("width must be >= 0")
         self.__width = value
-    
+
     @property
     def height(self):
         """Get the current height of the rectangle."""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """
         Set the height of the rectangle with validation.
-        
+
         Args:
             value (int): The new height value.
-            
+
         Raises:
             TypeError: If value is not an integer.
             ValueError: If value is less than 0.
         """
         if not isinstance(value, int):
-            raise TypeError("height doit être un entier")
+            raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("height doit être >= 0")
+            raise ValueError("height must be >= 0")
         self.__height = value
