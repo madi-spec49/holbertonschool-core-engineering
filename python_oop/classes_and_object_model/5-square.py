@@ -14,13 +14,15 @@ class Square:
         - size must be >= 0
     """
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """Initialize a new Square.
 
         Args:
             size: The size of the square (default: 0)
+            position: The position of the square as a tuple (default: (0, 0))
         """
         self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -36,6 +38,26 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+    @property
+    def position(self):
+        """Get the position of the square."""
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        """Set the position of the square with validation.
+
+        Args:
+            value: A tuple of 2 positive integers
+
+        Raises:
+            TypeError: If value is not a tuple of 2 positive integers
+        """
+        if (not isinstance(value, tuple) or len(value) != 2 or
+                not all(isinstance(i, int) and i >= 0 for i in value)):
+            raise TypeError("position must be a tuple of 2 positive integer")
+        self.__position = value
+
     def area(self):
         """Calculate and return the area of the square.
 
@@ -48,9 +70,31 @@ class Square:
         """Print the square with the character #.
 
         If size is equal to 0, print an empty line.
+        Uses position to add spacing before each line.
         """
         if self.__size == 0:
             print()
         else:
+
+            for _ in range(self.__position[1]):
+                print()
+  
             for _ in range(self.__size):
-                print("#" * self.__size)
+                print(" " * self.__position[0] + "#" * self.__size)
+
+    def __str__(self):
+        """Return a string representation of the square.
+
+        Returns:
+            A string with the square drawn using #.
+        """
+        if self.__size == 0:
+            return ""
+        result = []
+
+        for _ in range(self.__position[1]):
+            result.append("")
+
+        for _ in range(self.__size):
+            result.append(" " * self.__position[0] + "#" * self.__size)
+        return "\n".join(result)
