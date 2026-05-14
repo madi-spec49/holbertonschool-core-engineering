@@ -2,9 +2,9 @@
 """
 Module that defines a Square class with size property.
 """
+
+
 class Square:
-
-
     """
     A class that defines a square with a private size attribute.
     The size attribute is private to enforce encapsulation,
