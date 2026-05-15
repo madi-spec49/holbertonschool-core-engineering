@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-#!/usr/bin/env python3
 """
 Module that defines a BaseGeometry class with basic geometric operations.
 """
 
 
 class BaseGeometry:
+
+
     """
     A base class for geometric shapes.
 
