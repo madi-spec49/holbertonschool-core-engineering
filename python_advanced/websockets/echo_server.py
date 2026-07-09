@@ -10,7 +10,7 @@ async def connection_handler(websocket):
 
 async def main():
     print("🚀 Serveur Echo sur ws://localhost:8765")
-    async with websockets.serve(gerer_client, "localhost", 8765):
+    async with websockets.serve(connection_handler, "localhost", 8765):
         await asyncio.Future()
 
 if __name__ == "__main__":
