@@ -3,7 +3,7 @@ import asyncio
 import websockets
 
 
-async def gerer_client(websocket):
+async def connection_handler(websocket):
     async for message in websocket:
         await websocket.send(message)
 
