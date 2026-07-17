@@ -24,7 +24,7 @@ async def websocket_endpoint(websocket):
         while True:
             message = await websocket.receive_text()
             await websocket.send_text(message)
-    except:
+    except Exception:
         pass
 
 app = Starlette(routes=[
