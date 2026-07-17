@@ -3,7 +3,8 @@ import asyncio
 import websockets
 from websockets.exceptions import ConnectionClosed
 
-async def handle_client(websocket):
+
+async def connection_handler(websocket):
     """
     Gère les messages d'un client WebSocket.
     Valide chaque message et répond avec OK:message ou ERR:EMPTY.
@@ -12,7 +13,7 @@ async def handle_client(websocket):
         async for message in websocket:
             # Valider le message en supprimant les espaces
             stripped = message.strip()
-            
+
             if len(stripped) == 0:
                 # Message vide ou uniquement des espaces
                 response = "ERR:EMPTY"
@@ -21,17 +22,18 @@ async def handle_client(websocket):
                 # Message valide : renvoyer OK: + le message original
                 response = f"OK:{message}"
                 await websocket.send(response)
-                
+
     except ConnectionClosed:
         # Gérer la déconnexion du client
         print("Client déconnecté")
         return
 
+
 async def main():
     """
     Démarre le serveur WebSocket sur localhost:8765.
     """
-    async with websockets.serve(handle_client, "localhost", 8765):
+    async with websockets.serve(connection_handler, "localhost", 8765):
         print("Serveur WebSocket démarré sur ws://localhost:8765")
         print("En attente de connexions...")
         # Attendre indéfiniment
